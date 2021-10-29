@@ -1,0 +1,147 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //10px
+
+  @media screen and (max-width: $bp-1500) {
+    font-size: 56.25%; //9px
+  }
+
+  @media screen and (max-width: $bp-1000) {
+    font-size: 50%; //8px
+  }
+}
+
+body {
+  box-sizing: border-box;
+  font-family: $ff-text, sans-serif;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  color: $color-secondary-dark-2;
+  background-color: rgba($color-primary-light-2, 0.7);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $ff-heading;
+  color: $color-secondary-dark-2;
+  line-height: 1.25;
+}
+
+h1 {
+  font-size: 9rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 4.5rem;
+}
+
+h4 {
+  font-size: 3rem;
+}
+
+p {
+  color: $color-secondary-dark-2;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
+    color: currentColor;
+  }
+}
+
+::selection {
+  color: $color-tertiary-dark;
+  background-color: $color-secondary-light-2;
+}
+
+.active {
+  font-weight: 900;
+
+  &:hover {
+    color: $color-secondary-dark-2 !important;
+  }
+}
+
+// Media queries
+@media screen and (max-width: $bp-1500) {
+  h1 {
+    font-size: 8rem;
+  }
+
+  h2 {
+    font-size: 5rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: $bp-1000) {
+  h1 {
+    font-size: 6.5rem;
+  }
+
+  h2 {
+    font-size: 4.5rem;
+  }
+
+  h3 {
+    font-size: 3.5rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  h2 {
+    font-size: 3.5rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+  }
+
+  h4 {
+    font-size: 2.5rem;
+  }
+}

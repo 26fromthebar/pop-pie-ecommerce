@@ -1,0 +1,58 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="container-product-card">
+    <div class="product-card">
+      <h3 class="product-card__title"><%=product.title%></h3>
+      <img
+        src="data:image/jpg;base64,<%=product.image.toString('base64')%>"
+        alt="pie"
+        class="product-card__img"
+      />
+      <p class="product-card__description"><%=product.description%></p>
+      <div class="product-card-price">
+        <input
+          class="product-card-price__radio"
+          type="radio"
+          id="card-sizeS"
+          name="card-price"
+          value="<%=product.priceS%>"
+          checked
+        />
+        <label for="card-sizeS"
+          >Small size&nbsp;<span>$<%=product.priceS%></span></label
+        >
+        <input
+          class="product-card-price__radio"
+          type="radio"
+          id="card-sizeL"
+          name="card-price"
+          value="<%=product.priceL%>"
+        />
+        <label for="card-sizeL"
+          >Large size&nbsp;<span>$<%=product.priceL%></span></label
+        >
+      </div>
+      <div class="product-card-quantity">
+        <label for="card-quantity">Quantity:&nbsp;</label>
+        <input
+          class="product-card-quantity__input"
+          type="number"
+          id="card-quantity"
+          name="card-quantity"
+          maxlength="2"
+          min="1"
+          max="99"
+          value="1"
+        />
+      </div>
+      <button
+        class="product-card__btn btn btn--transparent"
+        data-btn-product-id="<%=product._id%>"
+      >
+        Add to cart
+      </button>
+    </div>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

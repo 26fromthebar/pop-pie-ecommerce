@@ -1,0 +1,57 @@
+<header class="header">
+  <div class="logo-box">
+    <img src="/img/logo.webp" alt="poppie logo" class="logo-box__img" />
+  </div>
+  <input type="checkbox" id="checkbox" class="nav-checkbox" />
+  <label for="checkbox" class="nav-menu">
+    <img
+      src="/img/flaticon/001-menu.webp"
+      alt="menu-bar"
+      class="nav-menu-btn"
+    />
+
+    <img
+      src="/img/flaticon/002-multiply.webp"
+      alt="exit-sign"
+      class="nav-cancel-btn"
+    />
+  </label>
+  <nav class="navbar">
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About us</a></li>
+      <li><a href="/contact">Contact us</a></li>
+      <li><a href="/ingredients">Ingredients</a></li>
+      <li><a href="/products?page=1&limit=12">Our Pies</a></li>
+      <li><a href="/cart">Cart</a></li>
+    </ul>
+
+    <% if (user) { %>
+    <div class="user-box">
+      <p class="user-box__text">Welcome <strong><%=user.username%></strong></p>
+
+      <% if (user.role === 'admin') { %>
+
+      <button class="btn btn--transparent btn--small" data-admin-btn>
+        Admin Panel
+      </button>
+
+      <% } %>
+
+      <button class="btn btn--transparent btn--small" data-user-logout>
+        Log out
+      </button>
+    </div>
+    <% } else { %>
+    <div class="user-box">
+      <button class="btn btn--transparent btn--small" data-signin-btn>
+        Sign in
+      </button>
+
+      <button class="btn btn--transparent btn--small" data-signup-btn>
+        Sign up
+      </button>
+    </div>
+    <%}%>
+  </nav>
+</header>

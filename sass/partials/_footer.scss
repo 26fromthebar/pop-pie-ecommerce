@@ -1,0 +1,66 @@
+.footer {
+  /* display properties */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* box-model properties */
+  min-height: 15vh;
+  padding: 0 1em 1em 1em;
+  /* miscellaneous properties */
+  background-color: $color-primary-dark-2;
+  overflow: hidden;
+}
+
+.footer-content {
+  color: $color-primary-light-2;
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+
+  margin-bottom: 2em;
+
+  &__link {
+    padding: 0.5em 0.25em;
+    color: $color-primary;
+
+    &:hover,
+    &:active {
+      color: $color-secondary-light-2;
+    }
+  }
+
+  &__copyright {
+    padding: 0.5em 0;
+
+    color: $color-primary-light-2;
+  }
+}
+
+.footer-social {
+  margin-block: 2em 1em;
+
+  text-align: end;
+
+  &__icon {
+    width: 4.5rem;
+    height: 4.5rem;
+    margin-left: 1em;
+  }
+}
+
+/* display properties */
+/* position properties */
+/* box-model properties */
+/* typography properties */
+/* manipulation properties */
+/* miscellaneous properties */
+
+// Media quries
+@media screen and (max-width: $bp-1500) {
+  .footer-content {
+    flex-direction: column;
+    gap: 0;
+
+    text-align: end;
+  }
+}

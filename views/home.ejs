@@ -1,0 +1,145 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="home">
+    <section class="hero">
+      <h1 class="hero__heading">Freshly made, to your plate</h1>
+      <p class="hero__text">
+        Every day we serve fresh pies with top quality ingredients.
+      </p>
+      <button class="hero__btn btn btn--solid btn--large">
+        Discover our pies
+      </button>
+    </section>
+    <section class="favorites">
+      <div class="slide-box slide-box--1" data-favorites-slidebox>
+        <h2 class="slide-box__heading slide-box__heading--1">
+          Always in search for the best quality, our products speak for
+          themselves.
+        </h2>
+      </div>
+      <div class="slide-box slide-box--2" data-favorites-slidebox>
+        <div class="slide-box--left">
+          <h3 class="slide-box__heading slide-box__heading--2">
+            Black chocolate pie with sea salt
+          </h3>
+          <p class="slide-box__text slide-box__text--2">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum,
+            sequi. Amet maxime quos laboriosam sint debitis aliquid!
+          </p>
+        </div>
+        <div class="slide-box--right">
+          <img
+            src="img/pies/chocolate-tarte_razvan-mirel.webp"
+            alt="strawberry pie"
+          />
+        </div>
+      </div>
+      <div class="slide-box slide-box--3" data-favorites-slidebox>
+        <div class="slide-box--left">
+          <h3 class="slide-box__heading slide-box__heading--3">
+            Tomato basil pie
+          </h3>
+          <p class="slide-box__text slide-box__text--3">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, ad
+            amndum speculorem.
+          </p>
+        </div>
+        <div class="slide-box--right">
+          <img
+            src="img/pies/cheese-tomato-basil-pie_lum3n.webp"
+            alt="chocolate pie"
+          />
+        </div>
+      </div>
+      <div class="slide-box slide-box--4" data-favorites-slidebox>
+        <div class="slide-box--left">
+          <h3 class="slide-box__heading slide-box__heading--4">
+            Fruit pie with prunes and apricot
+          </h3>
+          <p class="slide-box__text slide-box__text--4">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum, Lorem
+            ipsum dolor sit, amet consectetur elit.
+          </p>
+        </div>
+        <div class="slide-box--right">
+          <img
+            src="img/pies/prunes-apricot-fig-pie_priscilla-du-preez.webp"
+            alt="cheedar pie"
+          />
+        </div>
+      </div>
+      <span class="slide-box__previous" data-favorites-previous>&#10094;</span>
+      <span class="slide-box__next" data-favorites-next>&#10095;</span>
+      <div class="slide-box__dot-box">
+        <span
+          class="slide-box__dot slide-box__dot--1"
+          data-favorites-dot="1"
+        ></span>
+        <span
+          class="slide-box__dot slide-box__dot--2"
+          data-favorites-dot="2"
+        ></span>
+        <span
+          class="slide-box__dot slide-box__dot--3"
+          data-favorites-dot="3"
+        ></span>
+        <span
+          class="slide-box__dot slide-box__dot--4"
+          data-favorites-dot="4"
+        ></span>
+      </div>
+    </section>
+    <section class="ingredients">
+      <div class="ingredients-img-box">
+        <img
+          src="img/ingredients/flour.webp"
+          alt="Working bench with flour and eggs"
+          class="ingredients-img-box__img"
+        />
+      </div>
+      <div class="ingredients-text-box">
+        <h2 class="ingredients-text-box__heading">
+          We choose only top quality ingredients
+        </h2>
+        <p class="ingredients-text-box__text">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
+          expedita repellendus provident consequatur maxime voluptate itaque
+          iure minus nesciunt eum dicta dolores harum dolore doloribus eos
+          reprehenderit iste porro, suscipit mollitia. Molestias atque corrupti
+          a maiores quod recusandae quas eaque sunt inventore reprehenderit
+          incidunt dolores earum voluptates eius harum suscipit fugit doloremque
+          numquam nisi, provident omnis nam veritatis quis.
+        </p>
+        <a href="/ingredients" class="ingredients-text-box__link"
+          >Read more &rarr;</a
+        >
+      </div>
+    </section>
+    <section class="orders">
+      <div class="orders-divs">
+        <h3 class="orders-divs__heading">Custom Orders</h3>
+        <p class="orders-divs__text">
+          We make your desires reality. Contact us to create together your
+          favorite pie
+        </p>
+      </div>
+      <div class="orders-line">&nbsp;</div>
+      <div class="orders-divs">
+        <h3 class="orders-divs__heading">Wholesale</h3>
+        <p class="orders-divs__text">
+          Are you looking to buy products in bulk? We take wholesale orders too!
+        </p>
+      </div>
+      <div class="orders-line">&nbsp;</div>
+      <div class="orders-divs">
+        <h3 class="orders-divs__heading">Catering</h3>
+        <p class="orders-divs__text">
+          We stand by you to all of your social event and gatherings. Stationary
+          platters, hors d’oeuvres and small stations of your choice
+        </p>
+      </div>
+    </section>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

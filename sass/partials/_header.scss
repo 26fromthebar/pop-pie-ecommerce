@@ -1,0 +1,152 @@
+// Header styling
+.header {
+  /* display properties */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* position properties */
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  /* box-model properties */
+  width: 100%;
+  min-height: 15vh;
+  background-color: rgba($color-primary, 0.95);
+  box-shadow: 0 2px 7px $color-secondary-dark-3;
+  overflow: hidden;
+  /* typography properties */
+  /* miscellaneous properties */
+}
+
+.logo-box {
+  width: fit-content;
+  margin-left: 1em;
+}
+
+// Navigation styling
+.navbar {
+  flex: 0 0 80%;
+  // justify-self: end;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5%;
+
+  margin-right: 2em;
+
+  & ul {
+    text-transform: uppercase;
+  }
+
+  & li {
+    /* display properties */
+    display: inline-block;
+    /* box-model properties */
+    margin: 0.5em;
+    /* miscellaneous properties */
+    cursor: pointer;
+
+    & a {
+      // padding: 0.5em 0.5em;
+
+      color: $color-secondary-dark-2;
+      transition: all 0.2s;
+
+      &:hover,
+      &:active {
+        color: $color-primary-dark-2;
+      }
+    }
+  }
+}
+
+.user-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+
+  &__text {
+    /* box-model properties */
+    max-width: 14ch;
+    /* typography properties */
+    text-align: center;
+    line-height: 1.2;
+  }
+}
+
+// Dropdown menu
+.nav-checkbox {
+  display: none;
+}
+
+.nav-menu-btn,
+.nav-cancel-btn {
+  display: none;
+
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 2em;
+
+  cursor: pointer;
+}
+
+@media screen and (max-width: $bp-1500) {
+  .header {
+    background-color: $color-primary;
+  }
+
+  .navbar {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1em;
+
+    position: fixed;
+    width: 100%;
+    height: 85vh;
+    background-color: $color-primary;
+    top: 15vh;
+    left: -100%;
+
+    text-align: center;
+
+    transition: all 0.5s ease-in-out;
+
+    & li {
+      display: block;
+      margin-bottom: 1.5em;
+    }
+  }
+
+  .user-box {
+    order: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+
+    margin-bottom: 2em;
+  }
+
+  .nav-menu-btn {
+    display: block;
+  }
+
+  .nav-checkbox:checked ~ .navbar {
+    left: 0;
+  }
+
+  .nav-checkbox:checked ~ label .nav-menu-btn {
+    display: none;
+  }
+
+  .nav-checkbox:checked ~ label .nav-cancel-btn {
+    display: block;
+  }
+}
+/* display properties */
+/* position properties */
+/* box-model properties */
+/* typography properties */
+/* manipulation properties */
+/* miscellaneous properties */

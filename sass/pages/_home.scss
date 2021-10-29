@@ -1,0 +1,337 @@
+.home {
+  max-width: 2200px;
+  margin: 0 auto;
+}
+
+// Hero section
+.hero {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  height: 85vh;
+
+  background-image: linear-gradient(
+      to left bottom,
+      rgba($color-secondary-dark-2, 0.9),
+      rgba($color-secondary-dark, 0.9) 100%
+    ),
+    url('/img/hero_kristaps-grundsteins.webp');
+  background-position: right bottom;
+  background-size: cover;
+  background-position: bottom;
+
+  &__heading {
+    grid-area: 4/2/5/10;
+    align-self: center;
+    color: $color-primary-light-2;
+  }
+
+  &__text {
+    grid-area: 5/2/6/10;
+    color: rgba($color-primary-light-2, 0.8);
+    font-size: 3rem;
+  }
+
+  &__btn {
+    grid-area: 6/7/7/11;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+// Favorites section
+.favorites {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  gap: 1em;
+
+  padding: 2em;
+
+  background-color: $color-primary;
+}
+
+.slide-box {
+  grid-area: 2/2/-2/-2;
+  display: flex;
+  align-items: center;
+
+  border-radius: 5px;
+  background-color: $color-primary;
+
+  transition: opacity 0.6s;
+
+  opacity: 0;
+
+  &--1 {
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+  }
+
+  &--left {
+    flex-basis: 35%;
+    padding: 1em;
+  }
+
+  &--right {
+    flex-basis: 65%;
+    display: flex;
+
+    border-radius: 5px;
+    object-fit: cover;
+    overflow: hidden;
+
+    & img {
+      opacity: 0.8;
+      width: 100%;
+    }
+  }
+
+  &__heading {
+    font-style: italic;
+    font-weight: 700;
+
+    &--1 {
+      max-width: 35ch;
+
+      letter-spacing: 2px;
+      line-height: 1.8;
+      text-align: center;
+    }
+
+    &--2,
+    &--3,
+    &--4 {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  &__text {
+    max-width: 40ch;
+  }
+
+  &__previous,
+  &__next {
+    justify-self: center;
+    align-self: center;
+
+    font-size: 2em;
+    cursor: pointer;
+  }
+
+  &__previous {
+    grid-area: 5/1/6/2;
+  }
+
+  &__next {
+    grid-area: 5/-2/6/-1;
+  }
+
+  &__dot-box {
+    grid-area: 10/5/-1/7;
+    justify-self: center;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    width: 80%;
+  }
+
+  &__dot {
+    display: inline-block;
+
+    width: 0.75em;
+    height: 0.75em;
+
+    border-radius: 50%;
+    background-color: $color-primary-dark;
+
+    cursor: pointer;
+
+    &--1 {
+      background-color: $color-secondary-dark-2;
+    }
+  }
+}
+
+// Ingredients section
+.ingredients {
+  display: flex;
+  background-color: rgba($color-secondary, 0.4);
+}
+
+.ingredients-img-box {
+  object-fit: cover;
+  overflow: hidden;
+
+  &__img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.ingredients-text-box {
+  flex: 1 0 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 2em;
+
+  &__heading {
+    max-width: 40ch;
+    margin-bottom: 1em;
+  }
+
+  &__text {
+    max-width: 70ch;
+    margin-bottom: 1em;
+  }
+
+  &__link {
+    color: $color-secondary-dark-2;
+    text-decoration: underline;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $color-primary-dark-2;
+    }
+  }
+}
+
+// Orders section
+.orders {
+  background-color: $color-primary;
+  display: flex;
+  justify-content: space-around;
+  padding: 6em 3em;
+}
+.orders-divs {
+  flex: 0 0 33.33%;
+
+  padding: 0 3em;
+
+  &__heading {
+    font-weight: 400;
+  }
+
+  &__text {
+    margin-top: 2em;
+    font-style: italic;
+  }
+}
+
+.orders-line {
+  min-height: 15em;
+  max-height: 30em;
+  border: none;
+  box-shadow: 0.1rem 0 0 $color-secondary-dark-2;
+}
+
+// Media queries
+@media screen and (max-width: $bp-1000) {
+  .hero {
+    text-align: center;
+
+    &__text {
+      font-size: 2.5rem;
+    }
+
+    &__btn {
+      grid-area: 6/2/7/-2;
+    }
+  }
+  .favorites {
+    padding: 1em;
+  }
+
+  .slide-box {
+    flex-direction: column;
+    gap: 1em;
+
+    &--left,
+    &--right {
+      flex-basis: auto;
+    }
+
+    &--left {
+      order: 1;
+    }
+
+    &__heading {
+      margin-bottom: 0.5em;
+    }
+
+    &__text {
+      margin-bottom: 1em;
+      max-width: 60ch;
+    }
+
+    &__dot-box {
+      justify-content: space-between;
+    }
+  }
+
+  .orders {
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+
+    padding: 4em 0.5em;
+  }
+
+  .orders-line {
+    display: none;
+  }
+
+  .orders-divs {
+    &__text {
+      max-width: 50ch;
+      margin-top: 0.5em;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  .hero__text {
+    max-width: 25ch;
+    justify-self: center;
+  }
+  .favorites {
+    padding: 1em;
+  }
+
+  .slide-box {
+    flex-direction: column;
+
+    &__dot-box {
+      justify-content: space-between;
+
+      width: 150%;
+    }
+  }
+
+  .orders {
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+
+    padding: 4em 0.5em;
+  }
+
+  .orders-line {
+    display: none;
+  }
+
+  .orders-divs {
+    &__text {
+      max-width: 50ch;
+      margin-top: 0.5em;
+    }
+  }
+}

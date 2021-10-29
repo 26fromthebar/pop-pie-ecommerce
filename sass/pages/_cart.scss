@@ -1,0 +1,161 @@
+.cart {
+  min-height: 70vh;
+
+  &__heading {
+    padding: 0.75em 0;
+    text-align: center;
+  }
+}
+
+.container-cart {
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+
+  max-width: 2200px;
+  margin: 0 auto;
+  padding: 6em 2em;
+
+  &--left {
+    flex: 0 0 60%;
+    background-color: $color-primary;
+  }
+
+  &--right {
+    flex: 0 0 37%;
+
+    text-align: center;
+  }
+
+  &--empty {
+    // flex: 0 0 100%;
+  }
+}
+
+.cart-product-box {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas:
+    'img heading'
+    'img price'
+    'img .'
+    '. quantity'
+    'btn sum';
+
+  align-items: center;
+  column-gap: 1em;
+
+  padding: 1.5em;
+  background-color: $color-primary-light-2;
+
+  & + .cart-product-box {
+    border-top: 1px solid $color-secondary-dark-2;
+  }
+
+  &__img {
+    grid-area: img;
+
+    max-width: 10em;
+    border-radius: 5px;
+  }
+
+  &__heading {
+    grid-area: heading;
+    margin: 0.5em;
+    font-size: 3rem;
+  }
+
+  &__price {
+    grid-area: price;
+    margin-left: 2rem;
+    font-size: inherit;
+  }
+
+  &__quantity {
+    grid-area: quantity;
+
+    font-size: inherit;
+
+    & input {
+      font-size: inherit;
+      padding: 0.25em;
+
+      background-color: $color-primary-light-2;
+
+      border: 1px solid $color-primary-dark-2;
+      border-radius: 5px;
+      outline: none;
+
+      text-align: center;
+      color: $color-secondary-dark-2;
+    }
+  }
+
+  &__sum {
+    grid-area: sum;
+    justify-self: end;
+
+    margin-right: 1em;
+
+    font-weight: 900;
+  }
+
+  &__delete-btn {
+    grid-area: btn;
+    justify-self: start;
+  }
+
+  &__delete-all-btn {
+    margin: 2em 1.5em;
+  }
+}
+
+.cart-checkout {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 1.5em;
+
+  position: sticky;
+  top: 20vh;
+  max-height: 50%;
+
+  padding: 2em 1em;
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__total {
+    color: $color-secondary-dark-2;
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  &__btn {
+    // width: 50%;
+    align-self: center;
+  }
+}
+
+@media screen and (max-width: $bp-1000) {
+  .container-cart {
+    flex-direction: column;
+    gap: 4em;
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  .cart-product-box {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'heading'
+      'img'
+      'price'
+      'quantity'
+      'sum'
+      'btn';
+
+    row-gap: 0.75em;
+  }
+}

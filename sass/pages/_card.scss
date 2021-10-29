@@ -1,0 +1,110 @@
+.container-product-card {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-image: linear-gradient(
+    to left bottom,
+    rgba($color-secondary-dark-2, 0.87),
+    rgba($color-primary-light, 0.9) 100%
+  );
+}
+
+.product-card {
+  max-width: 1500px;
+
+  display: grid;
+  grid-template-areas:
+    'title description'
+    'img description'
+    'img prices'
+    'img quantity'
+    '. button';
+
+  column-gap: 3em;
+
+  padding: 2em 3em;
+  background-color: $color-primary;
+
+  border-radius: 5px;
+
+  &__title {
+    grid-area: title;
+    justify-self: center;
+
+    margin-bottom: 1em;
+    max-width: 19ch;
+  }
+
+  &__img {
+    grid-area: img;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px $color-secondary-dark-2;
+  }
+
+  &__description {
+    grid-area: description;
+    align-self: end;
+    max-width: 35ch;
+  }
+
+  &__btn {
+    grid-area: button;
+  }
+}
+
+.product-card-price {
+  grid-area: prices;
+  align-self: center;
+
+  font-size: inherit;
+
+  & #card-sizeL {
+    margin-left: 1.5em;
+  }
+
+  & label span {
+    font-weight: 700;
+  }
+}
+
+.product-card-quantity {
+  grid-area: quantity;
+  align-self: center;
+
+  font-size: inherit;
+
+  &__input {
+    font-size: inherit;
+    text-align: center;
+    color: $color-secondary-dark-2;
+
+    padding: 0.5em 0.25em;
+
+    background-color: $color-primary-light-2;
+
+    border: 1px solid $color-primary-dark-2;
+    border-radius: 5px;
+    outline: none;
+  }
+}
+
+// Media queries
+@media screen and (max-width: $bp-1000) {
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    align-items: center;
+
+    &__title {
+      margin-bottom: 0;
+    }
+
+    &__description {
+      align-self: center;
+    }
+  }
+}

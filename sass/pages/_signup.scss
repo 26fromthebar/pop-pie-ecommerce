@@ -1,0 +1,63 @@
+.credentials {
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+      to left bottom,
+      rgba($color-secondary-dark, 0.97),
+      rgba($color-primary-dark, 0.9) 100%
+    ),
+    url('/img/hero_quaid-lagan.jpg');
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    flex: 0 0 65%;
+    max-width: 40em;
+    background-color: $color-secondary-dark-2;
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+
+      padding: 5em;
+
+      & > * {
+        width: 100%;
+        background-color: $color-primary-light;
+        color: $color-secondary-dark-2;
+      }
+
+      & p {
+        background-color: $color-secondary-light;
+        color: $color-secondary-dark-2;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// Media queries
+@media screen and (max-width: $bp-1500) {
+  .credentials {
+    &__container {
+      flex-basis: 90%;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-1000) {
+  .credentials__container form {
+    padding: 3em;
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  .credentials__container form {
+    padding: 1.5em;
+  }
+}

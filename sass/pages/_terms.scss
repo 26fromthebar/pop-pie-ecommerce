@@ -1,0 +1,38 @@
+.terms {
+  min-height: 70vh;
+  padding: 3em;
+}
+.container-terms {
+  max-width: 2200px;
+  margin: 0 auto;
+
+  &__heading {
+    margin-block: 0.5em;
+    text-align: center;
+  }
+
+  &__text {
+    max-width: 80ch;
+    padding-block: 1em;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: $bp-1000) {
+  .terms {
+    padding: 1.5em;
+  }
+  .container-terms__text {
+    max-width: 60ch;
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  .terms {
+    padding: 1em;
+  }
+  .container-terms__text {
+    max-width: 40ch;
+  }
+}

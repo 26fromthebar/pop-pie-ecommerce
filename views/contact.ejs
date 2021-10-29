@@ -1,0 +1,102 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="contact">
+    <div class="container-contact">
+      <div class="contact-heading-box">
+        <h2 class="contact-heading-box__heading">Contact us</h2>
+        <h2 class="contact-heading-box__heading">Follow us</h2>
+        <h2 class="contact-heading-box__heading">Meet us</h2>
+      </div>
+      <form action="" class="contact-form">
+        <input
+          type="text"
+          placeholder="Name"
+          name="contact-name"
+          class="contact-form__input contact-form__input--1"
+        />
+        <input
+          type="text"
+          placeholder="Surname"
+          name="contact-surname"
+          class="contact-form__input contact-form__input--2"
+        />
+        <input
+          type="email"
+          placeholder="Email address"
+          name="contact-email"
+          class="contact-form__input contact-form__input--3"
+        />
+        <textarea
+          name="contact-textarea"
+          id="contact-textarea"
+          cols="50"
+          rows="10"
+          class="contact-form__textarea"
+          placeholder="Type your message here..."
+        ></textarea>
+        <button type="submit" class="contact-form__btn btn btn--solid">
+          Send message
+        </button>
+      </form>
+      <div class="contact-social">
+        <p class="contact-social__text contact-social__text--1">
+          <span>
+            <svg class="contact-social__icon">
+              <use href="/img/icomoon/sprite.svg#icon-twitter"></use>
+            </svg> </span
+          >&nbsp;&nbsp; Follow us on twitter <strong>#pop_pie</strong>
+        </p>
+
+        <p class="contact-social__text contact-social__text--2">
+          <span>
+            <svg class="contact-social__icon">
+              <use href="/img/icomoon/sprite.svg#icon-instagram"></use>
+            </svg> </span
+          >&nbsp;&nbsp; Follow us on instagram <strong>@pop_pie</strong>
+        </p>
+
+        <p class="contact-social__text contact-social__text--3">
+          <span>
+            <svg class="contact-social__icon">
+              <use href="/img/icomoon/sprite.svg#icon-envelop"></use>
+            </svg> </span
+          >&nbsp;&nbsp; Contact us through email
+          <strong>pop_pie@mail.com</strong>
+        </p>
+      </div>
+      <div class="contact-store">
+        <p class="contact-store__info contact-store__info--1">
+          <span>
+            <svg class="contact-store__icon">
+              <use href="/img/icomoon/sprite.svg#icon-compass2"></use>
+            </svg> </span
+          >&nbsp;&nbsp; Gr.Lambraki str 198, Ano Toumba
+        </p>
+
+        <p class="contact-store__info contact-store__info--2">
+          <span>
+            <svg class="contact-store__icon">
+              <use href="/img/icomoon/sprite.svg#icon-open"></use>
+            </svg> </span
+          >&nbsp;&nbsp; MON - FRI, 10:00 - 20:00
+        </p>
+
+        <p class="contact-store__info contact-store__info--3">
+          <span>
+            <svg class="contact-store__icon">
+              <use href="/img/icomoon/sprite.svg#icon-phone"></use>
+            </svg> </span
+          >&nbsp;&nbsp; +0030 2311945845
+        </p>
+      </div>
+      <div class="contact-img-box">
+        <img
+          src="img/bakery-inside2_adrien-olichon.webp"
+          alt="inside look of a bakery"
+        />
+      </div>
+    </div>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

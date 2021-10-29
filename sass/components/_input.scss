@@ -1,0 +1,23 @@
+.form-input {
+  padding: 1em 1.5em;
+
+  outline: none;
+  border: none;
+  border-radius: 3px;
+
+  font-family: $ff-text;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: $color-secondary-dark-2;
+
+  &:focus {
+    background-color: $color-secondary-light;
+  }
+}
+
+// @media screen and (max-width: $bp-large) {
+//   .form-input {
+//     font-size: 1.25rem;
+//   }
+// }

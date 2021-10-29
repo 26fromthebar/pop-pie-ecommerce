@@ -1,0 +1,113 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="products">
+    <nav class="nav-products">
+      <ul class="nav-products__links">
+        <li>
+          <a href="/products?page=1&limit=12" class="products__nav-link"
+            >All&nbsp;categories</a
+          >
+        </li>
+        <li>
+          <a
+            href="/products?category=fruit&page=1&limit=12"
+            class="products__nav-link"
+            >Fruit&nbsp;pies</a
+          >
+        </li>
+        <li>
+          <a
+            href="/products?category=sweet&page=1&limit=12"
+            class="products__nav-link"
+            >Sweet&nbsp;pies</a
+          >
+        </li>
+        <li>
+          <a
+            href="/products?category=savory&page=1&limit=12"
+            class="products__nav-link"
+            >Savory&nbsp;pies</a
+          >
+        </li>
+        <li>
+          <a
+            href="/products?category=vegan&page=1&limit=12"
+            class="products__nav-link"
+            >Vegan&nbsp;pies</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <div class="products-content">
+      <div class="products-grid">
+        <% results.forEach((result) => { %>
+        <div class="product-box">
+          <img
+            src="data:image/jpg;base64,<%=result.image.toString('base64')%>"
+            alt="Image of <%=result.title%>"
+            data-img-product-id="<%=result._id%>"
+            class="product-box__img"
+          />
+          <div class="product-info">
+            <h3 class="product-info__heading"><%=result.title%></h3>
+            <p class="product-info__price">$&nbsp<%=result.priceS%></p>
+          </div>
+          <button
+            class="product-box__button btn btn--solid btn--large"
+            data-btn-product-id="<%=result._id%>"
+          >
+            Add to cart
+          </button>
+        </div>
+        <% }); %>
+      </div>
+      <% if (products.length > limit) { %>
+      <div class="pagination">
+        <% if (category) { %> <% if (page > 1) { %>
+        <a
+          href="products?category=<%=category%>&page=<%= page -1 %>&limit=<%=limit%>"
+          class="pagination__btn"
+          data-pagination-btn-previous
+          >Previous</a
+        >
+        <% } %> <% for(i = 0; i < Math.ceil(products.length / limit); i++) { %>
+        <a
+          href="products?category=<%=category%>&page=<%= i + 1 %>&limit=<%= limit %>"
+          class="pagination__btn"
+          ><%= i + 1 %></a
+        >
+        <% } %> <% if (page < Math.ceil(products.length / limit)) { %>
+        <a
+          href="products?category=<%=category%>&page=<%=page + 1%>&limit=<%=limit%>"
+          class="pagination__btn"
+          data-pagination-btn-next
+          >Next</a
+        >
+        <% } %> <% } else { %> <% if (page > 1) { %>
+        <a
+          href="products?page=<%=page - 1%>&limit=<%=limit%>"
+          class="pagination__btn"
+          data-pagination-btn-previous
+          >Previous</a
+        >
+        <% } %> <% for(i = 0; i < Math.ceil(products.length / limit); i++) { %>
+        <a
+          href="products?page=<%= i + 1 %>&limit=<%= limit %>"
+          class="pagination__btn"
+          ><%= i + 1 %></a
+        >
+        <% } %> <% if (page < Math.ceil(products.length / limit)) { %>
+        <a
+          href="products?page=<%=page + 1%>&limit=<%=limit%>"
+          class="pagination__btn"
+          data-pagination-btn-next
+          >Next</a
+        >
+        <% } %> <% } %>
+      </div>
+      <% } %>
+    </div>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

@@ -1,0 +1,33 @@
+.edit {
+  min-height: 70vh;
+  padding-top: 1em;
+}
+
+.container-create--center {
+  width: 50%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+// Media queries
+@media screen and (max-width: $bp-1500) {
+  .container-create--center {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: $bp-1000) {
+  .container-create--center {
+    width: 80%;
+
+    & button {
+      align-self: stretch;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  .container-create--center {
+    width: 90%;
+  }
+}

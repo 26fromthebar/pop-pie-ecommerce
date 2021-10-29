@@ -1,0 +1,64 @@
+.btn {
+  padding: 1em 2.5em;
+
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 1px 5px $color-secondary-dark-2;
+
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: inherit;
+
+  cursor: pointer;
+
+  &--transparent {
+    background-color: transparent;
+
+    border: 2px solid $color-secondary-dark-2;
+    color: $color-secondary-dark-2;
+
+    transition: all 0.25s;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $color-secondary-dark-2;
+      color: $color-primary;
+    }
+  }
+
+  &--solid {
+    background-color: $color-secondary-dark-2;
+
+    color: $color-primary;
+
+    transition: all 0.25s;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-primary;
+      color: $color-secondary-dark-2;
+    }
+  }
+
+  &--small {
+    font-size: 1.6rem;
+  }
+
+  &--large {
+    font-size: 2.4rem;
+  }
+}
+
+// @media screen and (max-width: $bp-large) {
+//   .btn {
+//     font-size: 1.125rem;
+
+//     &--large {
+//       font-size: 1.375rem;
+//     }
+//   }
+// }

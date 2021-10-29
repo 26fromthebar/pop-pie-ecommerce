@@ -1,0 +1,75 @@
+<%- include('partials/head') -%>
+<body>
+  <%- include('partials/header') -%>
+  <main class="cart">
+    <div class="container-cart">
+      <% if (cartArray.length > 0) { %>
+      <div class="container-cart--left">
+        <h2 class="cart__heading">Your shopping cart</h2>
+        <% cartArray.forEach((product) => { %>
+        <div class="cart-product-box">
+          <img
+            src="data:image/jpg;base64,<%=product.image.toString('base64')%>"
+            alt="pie"
+            class="cart-product-box__img"
+          />
+          <h3 class="cart-product-box__heading"><%=product.title%></h4>
+          <p
+            class="cart-product-box__price"
+            data-cart-product-price="<%=product.price%>"
+          >
+            $&nbsp;<%=product.price%>
+          </p>
+
+          <div class="cart-product-box__quantity">
+            <label for="cart-quantity">Quantity</label>
+            <input
+              type="number"
+              id="cart-quantity"
+              name="cart-quantity"
+              min="1"
+              max="99"
+              value="<%=product.quantity%>"
+            />
+          </div>
+          <p class="cart-product-box__sum" data-cart-product-sum>Product sum</p>
+          <button
+            class="cart-product-box__delete-btn btn btn--solid"
+            data-remove-from-cart
+          >Remove
+          </button>
+        </div>
+        <% }) %>
+        <button
+          class="cart-product-box__delete-all-btn btn btn--transparent"
+          data-clear-cart
+        >
+          Clear cart
+        </button>
+      </div>
+
+      <div class="container-cart--right">
+        <div class="cart-checkout">
+          <h3 class="cart-checkout__heading">Order summary</h3>
+          <p class="cart-checkout__subtotal" data-cart-checkout-subtotal>
+            Subtotal
+          </p>
+          <p class="cart-checkout__taxes" data-cart-checkout-taxes>Taxes</p>
+          <p class="cart-checkout__total" data-cart-checkout-total>Total</p>
+          <button
+            class="cart-checkout__btn btn btn--solid btn--large"
+            data-cart-checkout-btn
+          >
+            Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+    <% } else { %>
+    <div class="cart__container--empty">
+      <h2 class="cart__heading">Your shopping cart is empty.</h2>
+    </div>
+    <% } %>
+  </main>
+  <%- include('partials/footer') -%>
+</body>

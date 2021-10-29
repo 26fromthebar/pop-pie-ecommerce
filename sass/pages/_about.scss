@@ -1,0 +1,43 @@
+.about {
+  min-height: 70vh;
+  max-width: 2200px;
+  margin: 0 auto;
+  background-color: $color-primary;
+}
+.img-box {
+  max-height: 30vh;
+
+  object-fit: cover;
+  overflow: hidden;
+
+  & img {
+    width: 100%;
+  }
+}
+
+.content-box {
+  width: 60%;
+  margin: 0 auto;
+  padding: 5em 0;
+
+  & > * {
+    margin-bottom: 1.25em;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+}
+
+// Media queries
+@media screen and (max-width: $bp-1000) {
+  .content-box {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+  .content-box {
+    width: 90%;
+  }
+}

@@ -1,0 +1,155 @@
+.products {
+  display: flex;
+  flex-direction: row;
+  max-width: 2200px;
+  margin: 0 auto;
+}
+.nav-products {
+  flex: 0 0 15%;
+  background-color: rgba($color-secondary-light-2, 0.7);
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+
+    margin: 5em 0.25em 0;
+  }
+
+  & li {
+    position: relative;
+  }
+
+  & li::after {
+    content: '';
+
+    position: absolute;
+    bottom: -0.25em;
+    left: 0.75em;
+
+    width: 70%;
+    height: 2px;
+
+    background-color: $color-secondary-dark;
+  }
+
+  & a {
+    padding: 0.75em 1.5em;
+    text-transform: capitalize;
+
+    &:hover,
+    &:active {
+      color: $color-primary-dark-2;
+    }
+  }
+}
+
+.products-content {
+  flex: 0 0 85%;
+  padding: 5em 2em;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  justify-items: center;
+  gap: 2em;
+}
+
+.product-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: $color-primary-light-2;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 0.5em;
+  box-shadow: 0 3px 5px $color-secondary-dark-2;
+
+  &__img {
+    cursor: pointer;
+
+    &:hover {
+      mix-blend-mode: multiply;
+    }
+  }
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1em;
+
+  padding: 1em;
+
+  &__heading {
+    font-size: 2.5rem;
+  }
+
+  &__price {
+    font-size: 2.5rem;
+  }
+}
+
+.pagination {
+  margin-top: 3em;
+
+  font-size: inherit;
+  font-weight: 700;
+  text-transform: capitalize;
+  text-align: center;
+
+  &__btn {
+    padding: 0.5em 1em;
+
+    background-color: $color-secondary-dark-2;
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    &:link,
+    &:visited {
+      color: $color-primary;
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-primary;
+      color: $color-secondary-dark-2;
+    }
+  }
+}
+
+// Media queries
+@media screen and (max-width: $bp-1500) {
+  .products {
+    flex-direction: column;
+  }
+
+  .nav-products {
+    &__links {
+      flex-direction: row;
+      justify-content: center;
+      margin: 3em 1em;
+    }
+
+    & li::after {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-1000) {
+  .nav-products__links {
+    gap: 1em;
+
+    & a {
+      padding: 0.75em 0.25em;
+    }
+  }
+}
+
+@media screen and (max-width: $bp-600) {
+}
