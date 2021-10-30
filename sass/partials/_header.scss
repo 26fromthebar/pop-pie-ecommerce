@@ -11,7 +11,7 @@
   z-index: 999;
   /* box-model properties */
   width: 100%;
-  min-height: 15vh;
+  height: 15vh;
   background-color: rgba($color-primary, 0.95);
   box-shadow: 0 2px 7px $color-secondary-dark-3;
   overflow: hidden;
@@ -20,7 +20,7 @@
 }
 
 .logo-box {
-  width: fit-content;
+  // flex: 1 1 auto;
   margin-left: 1em;
 }
 
@@ -93,6 +93,7 @@
 
 @media screen and (max-width: $bp-1500) {
   .header {
+    padding-block: 1em;
     background-color: $color-primary;
   }
 
@@ -107,6 +108,8 @@
     background-color: $color-primary;
     top: 15vh;
     left: -100%;
+
+    padding-top: 4em;
 
     text-align: center;
 

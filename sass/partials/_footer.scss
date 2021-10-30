@@ -64,3 +64,18 @@
     text-align: end;
   }
 }
+
+@media screen and (max-width: $bp-600) {
+  .footer .logo-box {
+    display: none;
+  }
+
+  .footer {
+    justify-content: end;
+  }
+
+  .footer-info {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -238,12 +238,19 @@
   .hero {
     text-align: center;
 
+    &__heading {
+      grid-area: 3/2/4/10;
+    }
+
     &__text {
+      grid-area: 4/2/5/10;
+      align-self: end;
       font-size: 2.5rem;
     }
 
     &__btn {
-      grid-area: 6/2/7/-2;
+      grid-area: 7/2/8/-2;
+      align-self: start;
     }
   }
   .favorites {
@@ -302,6 +309,7 @@
     max-width: 25ch;
     justify-self: center;
   }
+
   .favorites {
     padding: 1em;
   }
@@ -314,6 +322,10 @@
 
       width: 150%;
     }
+  }
+
+  .ingredients-img-box {
+    display: none;
   }
 
   .orders {

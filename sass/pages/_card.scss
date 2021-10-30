@@ -108,3 +108,19 @@
     }
   }
 }
+
+@media screen and (max-width: $bp-450) {
+  .product-card-price {
+    & > * {
+      display: block;
+    }
+
+    & #card-sizeL {
+      margin-left: 0;
+    }
+
+    & label {
+      margin-bottom: 1em;
+    }
+  }
+}
