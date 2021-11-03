@@ -72,22 +72,6 @@ router.post(
 
 // Search product in admin panel
 router.post('/admin/search-product', authAdmin, async (req, res) => {
-  // My code to get the search results
-  // try {
-  //   const term = req.body.search.toLowerCase();
-  //   const products = await Product.find();
-
-  //   const titles = products.map((product) => product.title.toLowerCase());
-
-  //   const results = titles.filter((title) => title.includes(term));
-
-  //   req.session.searchResults = results;
-  //   res.redirect('/admin/dashboard');
-  // } catch (e) {
-  //   res.status(404).send(e.message);
-  // }
-
-  // A more efficient way to get the same results as above
   try {
     if (req.body.search.trim() === '' || !req.body.search) {
       req.session.emptySearchMessage =

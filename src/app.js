@@ -11,8 +11,10 @@ const mainRouter = require('./routers/mainRouter');
 const adminRouter = require('./routers/adminRouter');
 
 const app = express();
+
 //directory to serve public folder
 const publicDirectoryPath = path.join(__dirname, '../public');
+
 //basic middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -21,7 +23,7 @@ app.use(methodOverride('_method'));
 
 //express-session middleware
 const HOUR = 2000 * 60 * 60;
-// const IN_PROD = process.env.NODE_ENV === 'production';
+
 app.use(
   session({
     name: process.env.SESS_NAME,
@@ -32,7 +34,6 @@ app.use(
     cookie: {
       maxAge: HOUR,
       sameSite: true,
-      // secure: IN_PROD,
     },
   })
 );

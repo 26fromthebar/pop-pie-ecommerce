@@ -63,16 +63,4 @@ router.post('/logout', async (req, res) => {
   res.redirect('/');
 });
 
-// //get user's account
-// router.get('/user/account', (req, res) => {
-//   try {
-//     res.status(200).send('Hello world');
-//   } catch (e) {
-//     res.status(404).send(e);
-//   }
-// });
-
-// //delete user's account
-// router.delete('/user/delete', (req, res) => {});
-
 module.exports = router;
